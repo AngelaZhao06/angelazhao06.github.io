@@ -1,10 +1,67 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 2rem;
-  background-color: #fdfdfd;
-  color: #333;
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #fdfdfd;
+    color: #333;
 }
-h1 {
-  color: #d94f70;
+
+.passport-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.passport-container {
+    perspective: 1200px;
+    width: 300px;
+    margin: 120px auto 0 auto; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+}
+
+.passport {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(.4,2,.6,1);
+    cursor: pointer;
+}
+
+.passport.open {
+    transform: rotateY(-180deg);
+}
+
+.passport-cover, .passport-page {
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.passport-cover {
+    background: #28283d;
+    color: rgb(165, 148, 49);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-family: "Georgia", serif;
+    letter-spacing: 2px;
+}
+
+.passport-page {
+    background: #f9f6ee;
+    color: #222;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
 }
