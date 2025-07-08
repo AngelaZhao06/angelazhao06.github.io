@@ -1,24 +1,83 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
+  <title>Angela Zhao</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="passport-container">
-  <div class="passport" id="passport">
-    <div class="passport-cover">PASSPORT</div>
-    <div class="passport-page">
-      <h2>Angela Zhao</h2>
-      <p>Nationality: Canadian</p>
-      <p>Date of Birth: 04/05/2006</p>
+  <div id="splash">
+    <div class="card">
+      <h1 id="typed-title"></h1>
+      <div class="pink-box" id="typed-box"></div>
     </div>
   </div>
-</div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Typing effect for splash title and box
+    function typeText(element, text, speed, callback, isBox) {
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          if (isBox && text.charAt(i) === '\n') {
+            element.appendChild(document.createElement('br'));
+          } else {
+            element.innerHTML += text.charAt(i);
+          }
+          i++;
+          setTimeout(type, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+    const title = "welcome my website";
+    const box1 = "my name's angela";
+    const box2 = "(and i'm glad you're here)";
+    const titleElem = document.getElementById("typed-title");
+    const boxElem = document.getElementById("typed-box");
+    typeText(titleElem, title, 60, function() {
+      typeText(boxElem, box1 + '\n' + box2, 40, null, true);
+    });
+    setTimeout(function() {
+      document.getElementById("splash").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 5200);
+  });
+  </script>
 
-<script src="scipt.js"></script>
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/special/spe-3/spe302.ani), url(https://cur.cursors-4u.net/special/spe-3/spe302.png), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2011/02/18/cute-bow-tie-hearts-blinking-blue-and-pink-pointer.html" target="_blank" title="Cute Bow Tie Hearts Blinking Blue and Pink Pointer"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Cute Bow Tie Hearts Blinking Blue and Pink Pointer" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+  <div id="main-content" style="display:none;">
+    <header>
+      <h1>Angela Zhao</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi, I'm Angela! I love building cool stuff and sharing it with the world.</p>
+    </section>
+
+    <section id="projects">
+      <h2>My Projects</h2>
+      <p>Check out some of the projects I've worked on.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>If you'd like to get in touch, feel free to reach out!</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
