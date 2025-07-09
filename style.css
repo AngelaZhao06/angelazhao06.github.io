@@ -44,7 +44,6 @@ h1 {
 }
 
 .pink-box {
-  background: transparent;
   color: #ef9edb;
   border-radius: 8px;
   border: 2px solid #c2638e;
@@ -52,3 +51,41 @@ h1 {
   margin-top: 10px;
 }
 
+.h2 {
+  font-size: 5px;
+  color: #c2638e;
+}
+
+.about-me-square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 120px;
+  height: 50px;
+  background: #fff0fa;
+  border: 2px solid #c2638e;
+  border-radius: 12px;
+  color: #c2638e;
+  text-align: center;          
+  text-decoration: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 0 10px;
+  margin: 20px 0 10px 20px;   
+  font-size: 10px;
+}
+
+.about-me-square:hover {
+  transform: translateY(-4px) scale(1.03);
+  color: #aa597e;
+  background: #f3e2ed;
+}
+
+.modal-box, #aboutme, #aboutme * {
+  font-family: "Monocraft", sans-serif;
+}
+
+.about-me-square, .about-me-square * {
+  font-family: "Monocraft", "Minecraft", 'Inter', sans-serif;
+  font-size: 15px;
+}

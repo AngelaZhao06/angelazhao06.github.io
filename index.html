@@ -33,9 +33,9 @@
       }
       type();
     }
-    const title = "welcome my website";
+    const title = "welcome to my website";
     const box1 = "my name's angela";
-    const box2 = "(and i'm glad you're here)";
+    const box2 = "(i'm glad you're here (◍•ᴗ•◍)♡)";
     const titleElem = document.getElementById("typed-title");
     const boxElem = document.getElementById("typed-box");
     typeText(titleElem, title, 60, function() {
@@ -52,20 +52,36 @@
 
   <div id="main-content" style="display:none;">
     <header>
-      <h1>Angela Zhao</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <section id="about-me">
+        <button id="aboutmebut" class="about-me-square">About Me</button>
+      </section>
     </header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hi, I'm Angela! I love building cool stuff and sharing it with the world.</p>
-    </section>
+<dialog id="aboutme" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>   
+
+    <script>
+      document.getElementById("aboutmebut").onclick = function() {
+        document.getElementById("aboutme").showModal();
+      };
+    </script>
+
+    <h2>About Me</h2>
+    <div class="flex space-x-4">
+      <div>
+        <p>Hi, I'm Angela. I love building cool stuff and sharing it with the world.</p>
+      </div>
+      <div>
+        <img src="elements/aboutmepic.JPG" alt="picture of me" style="max-width:200px;">
+        <p>A picture of me</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+   
 
     <section id="projects">
       <h2>My Projects</h2>
